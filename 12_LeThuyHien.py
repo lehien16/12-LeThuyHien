@@ -46,7 +46,17 @@ def search_student(search_name):
     - Nếu không tìm thấy, in ra "Khong tim thay sinh vien nao.".
     """
     ### VIẾT CODE CỦA BẠN VÀO ĐÂY ###
-    pass # Xóa dòng này khi bạn viết code
+    print("--- KET QUA TIM KIEM ---")
+    results = []
+    for s in student_list:
+        if search_name.lower() in s["name"].lower():
+            results.append(s)
+
+    if results:
+        for s in results:
+            print(f" - Ten: {s['name']}, Nam sinh: {s['year_of_birth']}, Dia chi: {s['address']}")
+    else:
+        print("Khong tim thay sinh vien nao.")
 
 # --- Phần thực thi chính để kiểm tra ---
 # Sinh viên không cần chỉnh sửa phần này.
